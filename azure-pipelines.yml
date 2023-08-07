@@ -13,7 +13,18 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- task: UniversalPackages@0
+  displayName: Publish a Universal Package
+  inputs:
+    command: publish
+    publishDirectory: 'testdir'
+    vstsFeedPublish: 'test/test_feed'
+    vstsFeedPackagePublish: 'test_package'
+    packagePublishDescription: 'mamadas'
+
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+
